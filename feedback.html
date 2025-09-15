@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Back</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">
+                <img src="img/logo.png" alt="logo" style="width:50px;" />
+                <b> Videogamepedia </b>
+            </a>
+            <a href="genres.html">Game Genres</a>
+            <a href="">History of Video Games</a>
+            <a href="feedback.html">Feedback</a>
+        </nav>
+    </header>
+    <main>
+        <form action="#">
+            <fieldset>
+                <legend>Personal information</legend>
+
+                <label for="fullname">Last name and first name</label>
+                <input id="fullname" type="text" required>
+
+                <label for="email">E-mail</label>
+                <input id="email" type="email" required>
+
+                <label for="age">Age</label>
+                <input id="age" type="number" min="1" max="120" required>
+
+                <label for="education">Education</label>
+                <select id="education" required>
+                    <option value="complete">Complete</option>
+                    <option value="incomplete">Incomplete</option>
+                    <option value="higher">Higher</option>
+                    <option value="vocational">Vocational</option>
+                </select>
+            </fieldset>
+
+            <label for="purpose">Purpose of feedback</label>
+            <select id="purpose" required>
+                <option value="cooperation">Cooperation</option>
+                <option value="violation">Copyright violation complaint</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="report">Error report</option>
+            </select>
+
+            <label for="details">Details (1000 characters maximum)</label>
+            <textarea id="details" maxlength="1000"></textarea>
+
+            <label for="consent">I consent to the processing of personal data</label>
+            <input id="consent" type="checkbox" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+    <footer>
+        <address>
+            Address: 123 Gaming Street, Tech City, 56789, USA <br>
+            Phone: +1 (555) 123-4567, +1 (555) 987-6543 <br>
+            Email: info@videogamepedia.com
+        </address>
+    </footer>
+</body>
+
+</html>
