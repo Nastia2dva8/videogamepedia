@@ -348,3 +348,7 @@ input[type="reset"]:hover,
 button:hover {
   filter: brightness(1.05);
 }
+
+main>article+article {
+  background: rgba(154, 209, 255, 0.06);
+}
