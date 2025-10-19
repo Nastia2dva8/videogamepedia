@@ -67,21 +67,21 @@ nav b {
 }
 
 /* Абсолютне позиціювання логотипа + назви */
-#site-title {
+/* #site-title {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 8px 12px;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1000;
-}
+} */
 
 
 /* Layout через Grid */
-main {
+.main {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
@@ -351,4 +351,76 @@ button:hover {
 
 main>article+article {
   background: rgba(154, 209, 255, 0.06);
+}
+
+/* Стилі для правильної роботи js*/
+.accordion-title {
+  background: rgba(255, 255, 255, 0.07);
+  color: #fff;
+  margin: 3px 0;
+  padding: 8px;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.accordion-title:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.accordion-content {
+  padding: 8px;
+  color: #d6e7ff;
+  font-size: 0.9rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.search-container label {
+  font-weight: 500;
+  color: #fff;
+}
+.search-container input {
+  flex-grow: 1;
+}
+
+.genre-page {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0px 100px;
+}
+
+/* Клас для вертикального меню */
+nav.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 220px;
+  padding: 20px 10px;
+  background: linear-gradient(180deg, #071021 0%, #0f1724 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 1000;
+}
+
+nav.vertical a {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* Зміщення контенту, щоб не ховався під меню */
+main.shifted {
+  margin-left: 220px;
 }
