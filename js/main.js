@@ -54,13 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
 function adjustMenuLayout() {
   const nav = document.querySelector("nav");
   const main = document.querySelector("main");
+  const footer = document.querySelector("footer");
 
   if (window.innerWidth <= 768) {
     nav.classList.add("vertical");
     main.classList.add("shifted");
+    footer.classList.add("shifted");
   } else {
     nav.classList.remove("vertical");
     main.classList.remove("shifted");
+    footer.classList.remove("shifted");
   }
 }
 window.addEventListener("load", adjustMenuLayout);

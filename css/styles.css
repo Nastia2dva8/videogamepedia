@@ -421,6 +421,6 @@ nav.vertical a {
 }
 
 /* Зміщення контенту, щоб не ховався під меню */
-main.shifted {
+.shifted {
   margin-left: 220px;
 }
