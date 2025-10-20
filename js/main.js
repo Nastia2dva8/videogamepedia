@@ -4,50 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const bElement = siteTitle.querySelector('b');
   const fontSize = parseFloat(getComputedStyle(bElement).fontSize);
-  const snowflakeSize = fontSize * 2; // Подвійний розмір
+  const snowflakeSize = fontSize * 2;
 
-  // Створюємо контейнер для сніжинок
   const snowContainer = document.createElement('div');
-  snowContainer.style.position = 'absolute';
-  snowContainer.style.top = '0';
-  snowContainer.style.left = '0';
-  snowContainer.style.width = '100%';
-  snowContainer.style.height = '100%';
-  snowContainer.style.overflow = 'hidden';
-  snowContainer.style.pointerEvents = 'none';
+  snowContainer.classList.add('snow-container');
   siteTitle.appendChild(snowContainer);
 
-  // Функція створення сніжинки
   function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.textContent = '❄';
-    snowflake.style.position = 'absolute';
+    snowflake.classList.add('snowflake');
     snowflake.style.fontSize = `${snowflakeSize}px`;
-    snowflake.style.color = 'rgba(255, 255, 255, 0.7)';
-    snowflake.style.left = '-10%';
     snowflake.style.top = `${Math.random() * 100}%`;
-    snowflake.style.zIndex = '1001'; // Поверх тексту
     snowContainer.appendChild(snowflake);
 
-    // Анімація руху зліва направо
     const duration = 10 + Math.random() * 5;
     snowflake.animate(
       [
         { transform: 'translateX(-10%)' },
         { transform: `translateX(${siteTitle.offsetWidth + 100}px)` }
       ],
-      {
-        duration: duration * 1000,
-        easing: 'linear',
-        fill: 'forwards'
-      }
+      { duration: duration * 1000, easing: 'linear', fill: 'forwards' }
     ).onfinish = () => snowflake.remove();
 
-    // Створюємо нову сніжинку через випадковий час
     setTimeout(createSnowflake, Math.random() * 2000);
   }
 
-  // Запускаємо першу сніжинку після якої полетять інші
   createSnowflake();
 });
 
@@ -67,6 +49,4 @@ function adjustMenuLayout() {
   }
 }
 window.addEventListener("load", adjustMenuLayout);
-
-// І при зміні розміру вікна
 window.addEventListener("resize", adjustMenuLayout);
